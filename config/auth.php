@@ -17,7 +17,7 @@ return [
         'guard' => 'sso',
         'passwords' => 'users',
     ],
-
+d
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
