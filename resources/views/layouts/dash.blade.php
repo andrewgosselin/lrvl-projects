@@ -140,7 +140,7 @@
           </div>
       </nav>
       <nav class="navbar shadow">
-          <div class="container">s
+          <div class="container">
               <div class="navbar-menu">
                   <div class="navbar-start bottomNav ">
                       <a class="navbar-item {{request()->is("/") ? "is-active" : ""}}" href="/">

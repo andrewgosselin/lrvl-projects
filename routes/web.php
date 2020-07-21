@@ -32,11 +32,19 @@ Route::get('/', function () {
 
 Route::get('/projects', function () {
 	return view('pages.projects.index')
-		->with('projects', \App\Models\Project::paginate(9));
+		->with('projects', \App\Models\Project::paginate(6));
 });
 
 Route::get('/projects/{id}/{section?}', function ($id, $section="dashboard") {
+	$project = \App\Models\Project::find($id);
+	if($section == "users") {
+		return view('pages.projects.project.' . $section)
+			->with('section', $section)
+			->with('project', $project)
+			->with('items', \Cyrex\SSO\APIModels\User::all(['project_id' => $project->id]));
+	}
+
 	return view('pages.projects.project.' . $section)
 		->with('section', $section)
-		->with('project', \App\Models\Project::find($id));
+		->with('project', $project);
 });
