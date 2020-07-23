@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::middleware('auth:api')->get('/v1/projects', function (Request $request) {
+    return [
+    	"status" => 200,
+    	"data" => \App\Models\Project::where('visibility', '=', $request['visibility'])->get()->toArray()
+    ];
+});
