@@ -21,8 +21,8 @@
   </style>
 @endsection
 @section('content')
-  <div class="container" style="height: 80%;">
-    <div class="columns is-multiline">
+  <div class="container" style="height: 100%;">
+    <div class="columns is-multiline" style="height: 60%;">
       @foreach($projects as $project)
         <div class="column is-one-third">
           <div class="card">
@@ -51,12 +51,18 @@
               <a href="/projects/{{$project->id}}/dashboard" class="card-footer-item">Dashboard</a>
               <a href="/projects/{{$project->id}}/files" class="card-footer-item">Files</a>
               <a href="/projects/{{$project->id}}/board" class="card-footer-item">Board</a>
+              <a href="/projects/{{$project->id}}/users" class="card-footer-item">Users</a>
             </footer>
           </div>
         </div>
       @endforeach
-      {{ $projects->links('vendor.pagination.bulma-default') }}
     </div>
+    <div class="columns">
+        <div class="column">
+          {{ $projects->links('vendor.pagination.bulma-default') }}
+        </div>
+    </div>
+    
   </div>
 @endsection
 @section('scripts')
