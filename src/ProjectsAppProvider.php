@@ -13,11 +13,16 @@ class ProjectsAppProvider extends ServiceProvider
     public function boot()
     {
         include __DIR__.'/routes/web.php';
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'mail');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'projects');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        $this->publishes([__DIR__.'/public' => public_path('vendor/lrvl/projects')], 'public');
         View::share('projectsApp', [
-            'name' => 'Mail',
-            'slug' => 'mail'
+            'name' => 'Projects',
+            'slug' => 'projects',
+            'icon' => [
+                "type" => "url",
+                "value" => "/vendor/lrvl/projects/icon.png"
+            ]
         ]);
     }
 
