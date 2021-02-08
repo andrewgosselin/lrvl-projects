@@ -1,11 +1,11 @@
 <?php
-namespace Lrvl\MailApp;
+namespace Lrvl\ProjectsApp;
 
 use Illuminate\Support\ServiceProvider;
 
 use Illuminate\Support\Facades\View;
 
-class MailAppProvider extends ServiceProvider
+class ProjectsAppProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -15,7 +15,7 @@ class MailAppProvider extends ServiceProvider
         include __DIR__.'/routes/web.php';
         $this->loadViewsFrom(__DIR__.'/resources/views', 'mail');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
-        View::share('mailApp', [
+        View::share('projectsApp', [
             'name' => 'Mail',
             'slug' => 'mail'
         ]);

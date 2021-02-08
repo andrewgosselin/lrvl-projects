@@ -1,6 +1,6 @@
 {
-    "name": "lrvl/mail-app",
-    "description": "Mail App for the Lrvl Hub.",
+    "name": "lrvl/projects-app",
+    "description": "Projects App for the Lrvl Hub.",
     "homepage": "https://cyrexag.com",
     "license": "MIT",
     "authors": [
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lrvl\\MailApp\\": "src/"
+            "Lrvl\\ProjectsApp\\": "src/"
         },
         "files": [
             "src/app/Http/helpers.php"
@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Lrvl\\MailApp\\MailAppProvider"
+                "Lrvl\\ProjectsApp\\ProjectsAppProvider"
             ]
         }
     }
